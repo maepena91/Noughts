@@ -1,4 +1,4 @@
-//Query Selector each div 
+//Query Selector each div/square. This will target the Id's that are in the HTML file.
 const one = document.querySelector('#d1')
 const two = document.querySelector('#d2')
 const three = document.querySelector('#d3')
@@ -10,7 +10,7 @@ const eight = document.querySelector('#d8')
 const nine = document.querySelector('#d9')
 const buttonRest = document.querySelector('#buttonReset')
 
-//declaring the winning conditions 
+//declaring the winning conditions using array 
 const winningConditions = [
     [0,1,2],
     [3,4,5],
@@ -24,11 +24,10 @@ const winningConditions = [
 
 //determine if the third x or O is a winner
 let winner = 0;
-
 //run each element of the array winning conditions
-function arrayIndividual(place, symbol)
+function arrayIndividual(place, symbol)//symbol is the X and O
 {
-//verify if the place of the combination is in the right symbol which is X or O
+//Here is the switch statement to verify the place of the combination is in the right symbol which is X or O for each div
     switch (place) {
            case 0:
             if(one.innerHTML === symbol)
@@ -90,30 +89,26 @@ function arrayIndividual(place, symbol)
     }
   
 }
-
+//run each element from the combination win to announce the winner
 function runArrayWinner(combinationArray, symbol)
 {
-
-
    winner = 0; 
-   //run each element from the combination win
-    combinationArray.forEach(x=> arrayIndividual(x, symbol) )
-    if(winner == 3)
+    combinationArray.forEach(x=> arrayIndividual(x, symbol) )//for each elemenet from the combination of arrays. This targets the array above.
+    if(winner == 3)//since the game takes 3 equal to either X or O to win, we are assigning value of 3 using the strict equality.
     {
         if(symbol == 'X')
         { 
-            document.getElementById("winningmessage").innerHTML = 'WINNER PAYER ONE'
+            document.getElementById("winningmessage").innerHTML = 'WINNER PLAYER ONE'
         }
         else
         {
-            document.getElementById("winningmessage").innerHTML = 'WINNER PAYER TWO'
+            document.getElementById("winningmessage").innerHTML = 'WINNER PLAYER TWO'
         }
    
     }
 }
 //Calculating if the player won diagnally, horizontally, or vertically
-//symbol is the X or O 
-function calculateWinner(symbol){
+function calculateWinner(symbol){  //symbol is the X or O 
 
     //run the possible options of winning
 winningConditions.forEach(x=> this.runArrayWinner(x, symbol))
@@ -124,7 +119,8 @@ winningConditions.forEach(x=> this.runArrayWinner(x, symbol))
 
 //declaring if else statements for each player/box div
 
-//playerTurn is the variable to determine which player is playing
+//playerTurn variable  determines which players turn is playing. By using "this" keyword in each div it will calculate winner. 
+//this will run player turns. 
 let playerTurn = true;
 one.addEventListener("click" , () => {
   
@@ -132,20 +128,15 @@ one.addEventListener("click" , () => {
     one.innerHTML = 'X'   
     playerTurn = false
 
-    this.calculateWinner('X')
+    this.calculateWinner('X')//keyword to calculate winner X
    
 }else{
     one.innerHTML = 'O'  
     
     playerTurn = true
-    this.calculateWinner('O')
-
-
+    this.calculateWinner('O')//keyword to calculate winner O
 }
-
-
 })
-
 
 two.addEventListener("click" , () => {
 if (playerTurn === true){
@@ -253,6 +244,7 @@ if (playerTurn === true){
     this.calculateWinner('O')
 }})
 
+//button reset even listener for each div/square
 buttonRest.addEventListener("click" , () => {
   
     one.innerHTML = '';
@@ -265,7 +257,7 @@ buttonRest.addEventListener("click" , () => {
     eight.innerHTML = '';
     nine.innerHTML = '';
   
-    document.getElementById("winningmessage").innerHTML = '';
+    document.getElementById("winningmessage").innerHTML = ''; 
    playerTurn = true;
 
 })
