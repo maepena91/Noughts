@@ -27,7 +27,7 @@ let winner = 0
 //run each element of the array winning conditions
 function arrayIndividual(place, symbol) {
   //symbol is the X and O
-  //Here is the switch statement to verify the place of the combination is in the right symbol which is X or O for each div
+  //Here is the switch statement to verify  place of the combination of arrays to place in the right symbol which is X or O for each div
   switch (place) {
     case 0:
       if (one.innerHTML === symbol) {
