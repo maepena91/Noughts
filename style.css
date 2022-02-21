@@ -1,12 +1,15 @@
 *{
     padding: 0;
     margin: 0;
+   
 }
 
-.background{
-    height: 100vh;
-    padding-left: 5px;
+body{
+   
+    background-image: url(pencil-g0ee375857_1280.jpg);
+    
 }
+
 header{
     color: black;
     text-align: center;
@@ -17,9 +20,6 @@ header{
     font-size: large;
 }
 
-.hide{
-    display: none;
-}
 
 .container{
     display: grid;
@@ -41,17 +41,6 @@ font-size: 40px;
 
 
 }
-.playerX{
-    color: darkslategray;
-}
-.playero{
-    color: dimgray;
-}
 
-#reset{
-    margin-left: 550px;
-    margin-top: 18px;
-    width: 150px;
-    height: 50px;
- 
-}
+
+
