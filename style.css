@@ -1,12 +1,15 @@
 *{
     padding: 0;
     margin: 0;
+   
 }
 
-.background{
-    height: 100vh;
-    padding-left: 5px;
+body{
+   
+    background-image: url(pencil-g0ee375857_1280.jpg);
+    
 }
+
 header{
     color: black;
     text-align: center;
@@ -17,9 +20,6 @@ header{
     font-size: large;
 }
 
-.hide{
-    display: none;
-}
 
 .container{
     display: grid;
@@ -41,20 +41,8 @@ font-size: 40px;
 
 
 }
-.playerX{
-    color: darkslategray;
-}
-.playero{
-    color: dimgray;
-}
 
-.control{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 
-}
 #reset{
     margin-left: 550px;
     margin-top: 18px;
@@ -63,9 +51,3 @@ font-size: 40px;
  
 }
 
-.x{
-    background-color: violet;
-}
-.o{
-    background-color: firebrick;
-}
