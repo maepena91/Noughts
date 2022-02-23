@@ -22,12 +22,12 @@ const winningConditions = [
   [2, 4, 6],
 ]
 
-//determines if the third x or O is a winner
+//determine if the third x or O is a winner
 let winner = 0
 //run each element of the array winning conditions
 function arrayIndividual(place, symbol) {
   //symbol is the X and O
-  //Here is the switch statement to verify  place of the combination of arrays to place the right symbol which is X or O for each div
+  //Here is the switch statement to verify  place of the combination of arrays to place in the right symbol which is X or O for each div
   switch (place) {
     case 0:
       if (one.innerHTML === symbol) {
@@ -92,7 +92,7 @@ function runArrayWinner(combinationArray, symbol) {
     }
   }
 }
-//Calculates player if either won diagnally, horizontally, or vertically
+//Calculating if the player won diagnally, horizontally, or vertically
 function calculateWinner(symbol) {
   //symbol is the X or O
 
@@ -106,12 +106,12 @@ function calculateWinner(symbol) {
 //this will run player turns.
 let playerTurn = true
 one.addEventListener('click', () => {
-  if (playerTurn === true && one.innerHTML !== 'X' && one.innerHTML !== 'O') { //this will return true and the will return false and vise versa. 
+  if (playerTurn === true && one.innerHTML !== 'X' && one.innerHTML !== 'O') { //this will return true and the will return false and vise versa
     one.innerHTML = 'X'
     playerTurn = false
 
     this.calculateWinner('X') //keyword to calculate winner X
-  } else if(playerTurn === false && one.innerHTML !== 'X' && one.innerHTML !== 'O')  {
+  } else if(playerTurn === false && one.innerHTML !== 'X' && one.innerHTML !== 'O')  {//same goes for this statement
     one.innerHTML = 'O'
 
     playerTurn = true
@@ -235,3 +235,6 @@ buttonReset.addEventListener('click', () => {
   document.getElementById('winningmessage').innerHTML = ''
   playerTurn = true
 })
+
+    
+
